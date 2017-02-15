@@ -1,7 +1,6 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-ctx.beginPath();
 /*
 canvas.addEventListener("click", function(e) {
     ctx.fillRect(e.clientX-10,e.clientY-80,100,100);
@@ -14,8 +13,9 @@ clear.addEventListener("click", function(e) {
 });
 
 canvas.addEventListener("click", function(e) {
-    ctx.arc(e.clientX-10, e.clientY-80, 8, 0, 2 * Math.PI);
-    ctx.fillStyle = "FF0000";
+    ctx.beginPath();
+    ctx.arc(e.offsetX, e.offsetY, 8, 0, 2 * Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#FF0000";
     ctx.fill();
-    ctx.lineTo(e.clientX-10, e.clientY-80);
 });
